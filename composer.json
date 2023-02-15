@@ -1,0 +1,33 @@
+{
+    "name": "moritzebeling/kirby-favicon",
+    "description": "Kirby plugin to meet all favicon needs",
+    "homepage": "https://github.com/moritzebeling/kirby-favicon",
+    "license": "MIT",
+    "type": "kirby-plugin",
+    "require": {
+        "php": ">=7.4.0",
+        "getkirby/composer-installer": "^1.1"
+    },
+    "authors": [
+        {
+            "name": "Moritz Ebeling",
+            "homepage": "https://moritzebeling.com"
+        }
+    ],
+    "keywords": [
+        "kirby",
+        "plugin",
+        "favicon",
+        "apple-touch-icon",
+        "browserconfig.xml",
+        "manifest.json",
+        "meta",
+        "seo",
+        "icon",
+        "logo"
+    ],
+    "support": {
+        "issues": "https://github.com/moritzebeling/kirby-favicon/issues",
+        "source": "https://github.com/moritzebeling/kirby-favicon"
+    }
+}
