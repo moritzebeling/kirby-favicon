@@ -1,13 +1,36 @@
 # Kirby Favicon
 
+This plugin will solve all your favicon worries.
+
+Minimal setup is just one `.png` file, and it will serve all requests to
+- `favicon.ico`
+- `apple-touch-icon.png` (or any variants of it)
+- `manifest.json`
+- `browserconfig.xml`
+
+You can also include a snippet into your HTML `<head>` to provide more favicon versions.
+
+## Installation
+
+```
+composer require moritzebeling/kirby-favicon
+```
+
+Or download/clone this repo into `site/plugins` of your Kirby project.
+
 ## Setup
 
-1. Install plugin
-2. Add `favicon.png` and `favicon.svg` inside `/assets/favicon/`
+1. Inside `assets/favicon` add the following two files:
+    - `favicon.png` (required, square, min 180x180px, but why don’t you just do 1024x1024px :)
+    - `favicon.svg` (nice to have, you could even adjust to light/dark mode)
 
-For `favicon.png` use a filesize of at least `180x180px`, but if you can, just do `1024x1024px` and you‘re good for every case.
+2. Inside your HTML `<head>` element, include the `favicon` snippet:
 
-For further control you could also add a specific app icons for Apple or Android, just have a look at the options.
+```php
+<?php snippet('favicon') ?>
+```
+
+For further control you could also add specific app icons for Apple, Android and Windows, just have a look at the available options below.
 
 ## Options
 
