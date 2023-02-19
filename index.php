@@ -7,19 +7,20 @@ use Kirby\Cms\Response;
 Kirby::plugin('moritzebeling/kirby-favicon',[
 
     'options' => [
-        'color' => '#0000ff',
-        'extended' => true,
         'favicon' => [
             'png' => 'assets/favicon/favicon.png', // required
             'ico' => 'assets/favicon/favicon.ico',
             'svg' => 'assets/favicon/favicon.svg',
             'sizes' => [ 32, 96, 16, 180 ],
         ],
-        'mask' => 'assets/favicon/mask.svg',
         'app' => [
             'icon' => 'assets/favicon/app-icon.png',
             'sizes' => [ 180, 167, 152 ]
         ],
+        'mask' => 'assets/favicon/mask.svg',
+        'color' => '#0000ff',
+        'extended' => false,
+        // the following will ony be show when 'extended' is set to true
         'manifest' => [
             'icon' => 'assets/favicon/android-icon.png',
             'background_color' => '#000000',
@@ -36,11 +37,7 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
         ],
         'browserconfig' => [
             'icon' => 'assets/favicon/ms-tile.png',
-            'sizes' => [
-                70,
-                150,
-                310
-            ]
+            'sizes' => [ 70, 150, 310 ]
         ],
     ],
 
@@ -63,8 +60,33 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
                 $png = asset( option('moritzebeling.kirby-favicon.favicon.png') );
 
                 if( $png->exists() ){
-                    $png = $png->resize( 32, 32 );
+                    $png = $png->resize( 32 );
                     return new Response($png->read(), 'image/png');
+                }
+                
+            }
+        ],
+        [
+            'pattern' => [
+                'apple-touch-icon.png',
+                'apple-touch-icon-precomposed.png',
+                'apple-touch-icon-(:num).png',
+                'apple-touch-icon-(:num)-precomposed.png',
+            ],
+            'action'  => function ( $size = 180 ) {
+
+                $allowed = [ 16, 32, 48, 58, 80, 120, 128, 152, 157, 167, 180, 192, 196 ];
+
+                if( !in_array( $size, $allowed ) ){
+                    go('/apple-touch-icon-precomposed.png');
+                }
+
+                $icon = asset( option('moritzebeling.kirby-favicon.app.icon') );
+                $icon = $icon->exists() ? $icon : asset( option('moritzebeling.kirby-favicon.favicon.png') );
+
+                if( $icon->exists() ){
+                    $icon = $icon->resize( $size );
+                    return new Response($icon->read(), 'image/png');
                 }
                 
             }

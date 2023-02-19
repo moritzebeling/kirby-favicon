@@ -1,25 +1,34 @@
 # Kirby Favicon
 
+## Setup
+
+1. Install plugin
+2. Add `favicon.png` and `favicon.svg` inside `/assets/favicon/`
+
+For `favicon.png` use a filesize of at least `180x180px`, but if you can, just do `1024x1024px` and you‘re good for every case.
+
+For further control you could also add a specific app icons for Apple or Android, just have a look at the options.
+
 ## Options
 
 ```php
 return [
     'moritzebeling.kirby-favicon' => [
         'color' => '#0000ff',
-        'extended' => true,
+        'extended' => false,
         'favicon' => [
             'png' => 'assets/favicon/favicon.png', // required
-            'ico' => 'assets/favicon/favicon.ico',
+            'ico' => 'assets/favicon/favicon.ico', // fallback: favicon.png
             'svg' => 'assets/favicon/favicon.svg',
             'sizes' => [ 32, 96, 16, 180 ],
         ],
-        'mask' => 'assets/favicon/mask.svg',
+        'mask' => 'assets/favicon/mask.svg', // fallback: favicon.svg
         'app' => [
-            'icon' => 'assets/favicon/app-icon.png',
+            'icon' => 'assets/favicon/app-icon.png', // fallback: favicon.png
             'sizes' => [ 180, 167, 152 ]
         ],
         'manifest' => [
-            'icon' => 'assets/favicon/android-icon.png',
+            'icon' => 'assets/favicon/android-icon.png', // fallback: favicon.png
             'background_color' => '#000000',
             'sizes' => [
                 36 => 0.75,
@@ -33,33 +42,13 @@ return [
             // other entries can be added here
         ],
         'browserconfig' => [
-            'icon' => 'assets/favicon/ms-tile.png',
-            'sizes' => [
-                70,
-                150,
-                310
-            ]
+            'icon' => 'assets/favicon/ms-tile.png', // fallback: favicon.png
+            'sizes' => [ 70, 150, 310 ]
         ],
     ]
 ];
 ```
 
-## favicon.ico
-
-If you don’t provide a specific icon at `/favicon.ico` or `assets/favicon/favicon.ico`, it will fall back to the `png` version.
-
-## apple-touch-icon
-
-Will fall back to the `png` favicon if provided.
-
-## mask-icon for Safari pinned tabs
-
-Will fall back to the `svg` version if provided.
-
 ## manifest.json
 
-If you don’t provide a specific icon at `assets/favicon/android-icon.png`, it will fall back to the `png` version. You can add other values according to the [specification](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json).
-
-## browserconfig.xml
-
-If you don’t provide a specific icon at `assets/favicon/ms-tile.png`, it will fall back to the `png` version.
+You can add other values according to the [specification](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json).
