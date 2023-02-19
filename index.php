@@ -1,27 +1,28 @@
 <?php
 
 use Kirby\Cms\App as Kirby;
+use Kirby\Filesystem\F;
 
 Kirby::plugin('moritzebeling/kirby-favicon',[
 
     'options' => [
-        'directory' => 'assets/favicon',
         'sizes' => [
-            16,
             32,
-            48,
-            64,
             96,
-            128,
-            144,
-            180,
-            192,
-            256,
-            512,
-            1024
+            16
         ],
         'color' => '#0000ff',
         'background' => '#000000',
+    ],
+
+    'routes' => [
+        [
+            'pattern' => 'favicon.ico',
+            'action'  => function () {
+                $dir = kirby()->option('moritzebeling.kirby-favicon.directory');
+                $file = F::exists( $dir . '/favicon.ico' ) ? $dir . '/favicon.ico' : $dir . '/favicon.png';
+            }
+        ]
     ]
 
 ]);

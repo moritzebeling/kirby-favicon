@@ -46,6 +46,10 @@ If none of the above were found, Safari will automatically scrape the root direc
 
 The `-precomposed.png` tells safari to not add any gloss effects to the icon.
 
+```html
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0000ff">
+```
+
 Web app mode
 
 ```html
