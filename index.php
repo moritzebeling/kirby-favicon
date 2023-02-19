@@ -9,20 +9,21 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
     'options' => [
         'favicon' => [
             'png' => 'assets/favicon/favicon.png', // required
-            'ico' => 'assets/favicon/favicon.ico',
+            'ico' => 'assets/favicon/favicon.ico', // fallback to favicon.png
             'svg' => 'assets/favicon/favicon.svg',
             'sizes' => [ 32, 96, 16, 180 ],
         ],
         'app' => [
-            'icon' => 'assets/favicon/app-icon.png',
+            'icon' => 'assets/favicon/app-icon.png', // fallback to favicon.png
             'sizes' => [ 180, 167, 152 ]
         ],
-        'mask' => 'assets/favicon/mask.svg',
+        'mask' => 'assets/favicon/mask.svg', // fallback to favicon.svg
         'color' => '#0000ff',
+        
         'extended' => false,
         // the following will ony be show when 'extended' is set to true
         'manifest' => [
-            'icon' => 'assets/favicon/android-icon.png',
+            'icon' => 'assets/favicon/android-icon.png', // fallback to favicon.png
             'background_color' => '#000000',
             'sizes' => [
                 36 => 0.75,
@@ -36,7 +37,7 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
             // other entries can be added here
         ],
         'browserconfig' => [
-            'icon' => 'assets/favicon/ms-tile.png',
+            'icon' => 'assets/favicon/ms-tile.png', // fallback to favicon.png
             'sizes' => [ 70, 150, 310 ]
         ],
     ],
