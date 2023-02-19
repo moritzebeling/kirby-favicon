@@ -8,11 +8,17 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
 
     'options' => [
         'color' => '#0000ff',
+        'extended' => true,
         'favicon' => [
             'png' => 'assets/favicon/favicon.png', // required
             'ico' => 'assets/favicon/favicon.ico',
             'svg' => 'assets/favicon/favicon.svg',
-            'sizes' => [ 32, 96, 16 ],
+            'sizes' => [ 32, 96, 16, 180 ],
+        ],
+        'mask' => 'assets/favicon/mask.svg',
+        'app' => [
+            'icon' => 'assets/favicon/app-icon.png',
+            'sizes' => [ 180, 167, 152 ]
         ],
         'manifest' => [
             'icon' => 'assets/favicon/android-icon.png',
@@ -39,6 +45,7 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
     ],
 
     'snippets' => [
+        'favicon' => __DIR__ . '/snippets/favicon.php',
         'favicon/browserconfig' => __DIR__ . '/snippets/browserconfig.php',
     ],
 

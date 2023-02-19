@@ -6,11 +6,17 @@
 return [
     'moritzebeling.kirby-favicon' => [
         'color' => '#0000ff',
+        'extended' => true,
         'favicon' => [
             'png' => 'assets/favicon/favicon.png', // required
             'ico' => 'assets/favicon/favicon.ico',
             'svg' => 'assets/favicon/favicon.svg',
-            'sizes' => [ 32, 96, 16 ],
+            'sizes' => [ 32, 96, 16, 180 ],
+        ],
+        'mask' => 'assets/favicon/mask.svg',
+        'app' => [
+            'icon' => 'assets/favicon/app-icon.png',
+            'sizes' => [ 180, 167, 152 ]
         ],
         'manifest' => [
             'icon' => 'assets/favicon/android-icon.png',
@@ -41,6 +47,14 @@ return [
 ## favicon.ico
 
 If you don’t provide a specific icon at `/favicon.ico` or `assets/favicon/favicon.ico`, it will fall back to the `png` version.
+
+## apple-touch-icon
+
+Will fall back to the `png` favicon if provided.
+
+## mask-icon for Safari pinned tabs
+
+Will fall back to the `svg` version if provided.
 
 ## manifest.json
 
