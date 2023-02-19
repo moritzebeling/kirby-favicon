@@ -46,8 +46,20 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
         [
             'pattern' => 'favicon.ico',
             'action'  => function () {
-                $dir = kirby()->option('moritzebeling.kirby-favicon.directory');
-                $file = F::exists( $dir . '/favicon.ico' ) ? $dir . '/favicon.ico' : $dir . '/favicon.png';
+
+                $ico = asset( option('moritzebeling.kirby-favicon.favicon.ico') );
+
+                if( $ico->exists() ){
+                    return new Response($ico->read(), 'image/x-icon');
+                }
+
+                $png = asset( option('moritzebeling.kirby-favicon.favicon.png') );
+
+                if( $png->exists() ){
+                    $png = $png->resize( 32, 32 );
+                    return new Response($png->read(), 'image/png');
+                }
+                
             }
         ],
         [

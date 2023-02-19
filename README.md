@@ -38,6 +38,10 @@ return [
 ];
 ```
 
+## favicon.ico
+
+If you don’t provide a specific icon at `/favicon.ico` or `assets/favicon/favicon.ico`, it will fall back to the `png` version.
+
 ## manifest.json
 
 If you don’t provide a specific icon at `assets/favicon/android-icon.png`, it will fall back to the `png` version. You can add other values according to the [specification](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json).
