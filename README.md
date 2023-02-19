@@ -37,21 +37,22 @@ For further control you could also add specific app icons for Apple, Android and
 ```php
 return [
     'moritzebeling.kirby-favicon' => [
-        'color' => '#0000ff',
-        'extended' => false,
         'favicon' => [
             'png' => 'assets/favicon/favicon.png', // required
-            'ico' => 'assets/favicon/favicon.ico', // fallback: favicon.png
+            'ico' => 'assets/favicon/favicon.ico',
             'svg' => 'assets/favicon/favicon.svg',
             'sizes' => [ 32, 96, 16, 180 ],
         ],
-        'mask' => 'assets/favicon/mask.svg', // fallback: favicon.svg
         'app' => [
-            'icon' => 'assets/favicon/app-icon.png', // fallback: favicon.png
+            'icon' => 'assets/favicon/app-icon.png',
             'sizes' => [ 180, 167, 152 ]
         ],
+        'mask' => 'assets/favicon/mask.svg',
+        'color' => '#0000ff',
+        'extended' => false,
+        // the following will ony be show when 'extended' is set to true
         'manifest' => [
-            'icon' => 'assets/favicon/android-icon.png', // fallback: favicon.png
+            'icon' => 'assets/favicon/android-icon.png',
             'background_color' => '#000000',
             'sizes' => [
                 36 => 0.75,
@@ -65,7 +66,7 @@ return [
             // other entries can be added here
         ],
         'browserconfig' => [
-            'icon' => 'assets/favicon/ms-tile.png', // fallback: favicon.png
+            'icon' => 'assets/favicon/ms-tile.png',
             'sizes' => [ 70, 150, 310 ]
         ],
     ]
