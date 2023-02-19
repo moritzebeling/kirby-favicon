@@ -1,6 +1,8 @@
 <?php
 
+$minimalist = $minimalist ?? option('moritzebeling.kirby-favicon.minimalist', false);
 $extended = $extended ?? option('moritzebeling.kirby-favicon.extended', false);
+
 $svg = asset( option('moritzebeling.kirby-favicon.favicon.svg') );
 $png = asset( option('moritzebeling.kirby-favicon.favicon.png') );
 $app = asset( option('moritzebeling.kirby-favicon.app.icon') );
@@ -21,7 +23,7 @@ if( $svg->exists() ){
 if( $png->exists() ){
 
     foreach( option('moritzebeling.kirby-favicon.favicon.sizes', []) as $size ){
-        if( $size === 180 ){ continue; }
+        if( $minimalist || $size === 180 ){ continue; }
         $url = $png->resize( $size )->url();
         $s = $size . 'x' . $size;
         $tags[] = "<link rel='icon' type='image/png' sizes='$s' href='$url'>";
@@ -41,7 +43,7 @@ if( $app->exists() ){
     $tags[] = "<link rel='apple-touch-icon' type='image/png' href='$url'>";
     
     foreach( option('moritzebeling.kirby-favicon.app.sizes', []) as $size ){
-        if( $size === 180 ){ continue; }
+        if( $minimalist || $size === 180 ){ continue; }
         $url = $png->resize( $size )->url();
         $s = $size . 'x' . $size;
         $tags[] = "<link rel='apple-touch-icon' type='image/png' sizes='$s' href='$url'>";

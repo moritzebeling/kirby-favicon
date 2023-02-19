@@ -43,8 +43,12 @@ return [
         'mask' => 'assets/favicon/mask.svg', // fallback to favicon.svg
         'color' => '#0000ff',
         
-        'extended' => false,
+        // for minimal html output
+        'minimalist' => false,
+        
         // the following will ony be show when 'extended' is set to true
+        'extended' => false,
+
         'manifest' => [
             'icon' => 'assets/favicon/android-icon.png', // fallback to favicon.png
             'background_color' => '#000000',
@@ -76,11 +80,16 @@ You can add other values according to the [specification](https://developer.mozi
 It will automatically serve the following routes:
 
 - `favicon.ico`
-- `apple-touch-icon.png` and all its versions like `apple-touch-icon-167.png` or `apple-touch-icon-precomposed.png`
+- `apple-touch-icon.png` and all its versions like
+    - `apple-touch-icon-precomposed.png`
+    - `apple-touch-icon-167.png`
+    - `apple-touch-icon-167-precomposed.png`
+    - and whatever Safari feels like requesting
 - `manifest.json`
 - `browserconfig.xml`
 
-The favicon snippet will print the following HTML:
+Per default, the favicon snippet will print the following HTML:
+When the `minimalist` option is set to `true`, the favicon snippet will print the following HTML:
 
 ```html
 <link rel="icon" type="image/svg+xml" href="/media/.../favicon.svg">
@@ -95,7 +104,19 @@ The favicon snippet will print the following HTML:
 <link rel="mask-icon" href="/media/.../favicon.svg" color="#0000ff">
 ```
 
-When the `moritzebeling.kirby-favicon.extended` option is `true`, it will also add the following:
+All sizes can be adjusted through the plugin settings.
+
+When `minimalist` is set to `true`, all sizes are removed:
+
+```html
+<link rel="icon" type="image/svg+xml" href="/media/.../favicon.svg">
+<link rel="alternate icon" type="image/png" href="/media/.../favicon-180x.png">
+<link rel="apple-touch-icon" type="image/png" href="/media/.../favicon-180x.png">
+<meta name="theme-color" content="#0000ff">
+<link rel="mask-icon" href="/media/.../favicon.svg" color="#0000ff">
+```
+
+When `extended` option is `true`, the following is added:
 
 ```html
 <link rel="manifest" href="/manifest.json">
@@ -103,8 +124,6 @@ When the `moritzebeling.kirby-favicon.extended` option is `true`, it will also a
 <meta name="msapplication-TileColor" content="#0000ff">
 <meta name="msapplication-TileImage" content="/media/.../favicon-144x.png">
 ```
-
-All sizes can be adjusted through the plugin settings.
 
 ## Development
 

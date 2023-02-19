@@ -1,7 +1,6 @@
 <?php
 
 use Kirby\Cms\App as Kirby;
-use Kirby\Filesystem\F;
 use Kirby\Cms\Response;
 
 Kirby::plugin('moritzebeling/kirby-favicon',[
@@ -20,8 +19,12 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
         'mask' => 'assets/favicon/mask.svg', // fallback to favicon.svg
         'color' => '#0000ff',
         
-        'extended' => true,
+        // for minimal html output
+        'minimalist' => false,
+        
         // the following will ony be show when 'extended' is set to true
+        'extended' => false,
+
         'manifest' => [
             'icon' => 'assets/favicon/android-icon.png', // fallback to favicon.png
             'background_color' => '#000000',

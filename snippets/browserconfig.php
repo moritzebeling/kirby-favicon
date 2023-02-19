@@ -7,7 +7,9 @@
                 ?>
                 <square<?= $size ?>x<?= $size ?>logo src="<?= $i->url() ?>" />
             <?php endforeach; ?>
-            <TileColor><?= $color ?></TileColor>
+            <?php if( $color ): ?>
+                <TileColor><?= $color ?></TileColor>
+            <?php endif; ?>
         </tile>
     </msapplication>
 </browserconfig>
