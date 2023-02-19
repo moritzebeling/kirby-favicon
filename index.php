@@ -20,7 +20,7 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
         'mask' => 'assets/favicon/mask.svg', // fallback to favicon.svg
         'color' => '#0000ff',
         
-        'extended' => false,
+        'extended' => true,
         // the following will ony be show when 'extended' is set to true
         'manifest' => [
             'icon' => 'assets/favicon/android-icon.png', // fallback to favicon.png

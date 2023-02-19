@@ -1,14 +1,7 @@
 # Kirby Favicon
 
 This plugin will solve all your favicon worries.
-
-Minimal setup is just one `.png` file, and it will serve all requests to
-- `favicon.ico`
-- `apple-touch-icon.png` (or any variants of it)
-- `manifest.json`
-- `browserconfig.xml`
-
-You can also include a snippet into your HTML `<head>` to provide more favicon versions.
+Minimal setup is just one `.png` file.
 
 ## Installation
 
@@ -77,3 +70,42 @@ return [
 ## manifest.json
 
 You can add other values according to the [specification](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json).
+
+## What will it do?
+
+It will automatically serve the following routes:
+
+- `favicon.ico`
+- `apple-touch-icon.png` and all its versions like `apple-touch-icon-167.png` or `apple-touch-icon-precomposed.png`
+- `manifest.json`
+- `browserconfig.xml`
+
+The favicon snippet will print the following HTML:
+
+```html
+<link rel="icon" type="image/svg+xml" href="/media/.../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/media/.../favicon-32x.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/media/.../favicon-96x.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/media/.../favicon-16x.png">
+<link rel="alternate icon" type="image/png" href="/media/.../favicon-180x.png">
+<link rel="apple-touch-icon" type="image/png" href="/media/.../favicon-180x.png">
+<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="/media/.../favicon-167x.png">
+<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="/media/.../favicon-152x.png">
+<meta name="theme-color" content="#0000ff">
+<link rel="mask-icon" href="/media/.../favicon.svg" color="#0000ff">
+```
+
+When the `moritzebeling.kirby-favicon.extended` option is `true`, it will also add the following:
+
+```html
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#0000ff">
+<meta name="msapplication-TileImage" content="/media/.../favicon-144x.png">
+```
+
+All sizes can be adjusted through the plugin settings.
+
+## Development
+
+This plugin is work in progress and I don’t provide any warranty. Use at your own risk. If you have any ideas for further developments or stumble upon any problems, please open an issue or PR. Thank you!
