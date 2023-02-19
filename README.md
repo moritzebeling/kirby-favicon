@@ -1,7 +1,6 @@
 # Kirby Favicon
 
 This plugin will solve all your favicon worries.
-Minimal setup is just one `.png` file.
 
 ## Installation
 
@@ -11,19 +10,22 @@ composer require moritzebeling/kirby-favicon
 
 Or download/clone this repo into `site/plugins` of your Kirby project.
 
-## Setup
+## Minimal setup
 
-1. Inside `assets/favicon` add the following two files:
-    - `favicon.png` (required, square, min 180x180px, but why don’t you just do 1024x1024px :)
-    - `favicon.svg` (nice to have, you could even adjust to light/dark mode)
+1. Inside `assets/favicon` add `favicon.png`
 
-2. Inside your HTML `<head>` element, include the `favicon` snippet:
+The icon should be square, min `180x180px`, but why don’t you just do `1024x1024px` :)
+
+## More detailed setup
+
+2. Also add a `favicon.svg`
+3. Inside your HTML `<head>` element, include the `favicon` snippet:
 
 ```php
 <?php snippet('favicon') ?>
 ```
 
-For further control you could also add specific app icons for Apple, Android and Windows, just have a look at the available options below.
+For further control you could also add specific app icons for Apple, Android and Windows, and control all the sizes that are generated. Just have a look at the available options below.
 
 ## Options
 
@@ -89,7 +91,6 @@ It will automatically serve the following routes:
 - `browserconfig.xml`
 
 Per default, the favicon snippet will print the following HTML:
-When the `minimalist` option is set to `true`, the favicon snippet will print the following HTML:
 
 ```html
 <link rel="icon" type="image/svg+xml" href="/media/.../favicon.svg">
@@ -105,7 +106,6 @@ When the `minimalist` option is set to `true`, the favicon snippet will print th
 ```
 
 All sizes can be adjusted through the plugin settings.
-
 When `minimalist` is set to `true`, all sizes are removed:
 
 ```html
