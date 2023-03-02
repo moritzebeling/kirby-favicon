@@ -1,6 +1,6 @@
 # Kirby Favicon
 
-This plugin will solve all your favicon worries.
+This plugin will solve all your favicon worries :)
 
 ## Installation
 
@@ -16,7 +16,7 @@ Or download/clone this repo into `site/plugins` of your Kirby project.
 
 The icon should be square, min `180x180px`, but why don’t you just do `1024x1024px` :)
 
-## More detailed setup
+## Recommended setup
 
 2. Also add a `favicon.svg`
 3. Inside your HTML `<head>` element, include the `favicon` snippet:
@@ -25,7 +25,11 @@ The icon should be square, min `180x180px`, but why don’t you just do `1024x10
 <?php snippet('favicon') ?>
 ```
 
+Usually, the `png` will be used as an app icon (eg. when you save the website as an app icon to your home screen), so I would recommend to not use transparency and add a little more space around the symbol. The `svg` will then be used by modern browsers for showing it in the tab bar, so transparency is fine and you can use the entire space as it will be shown quite small.
+
 For further control you could also add specific app icons for Apple, Android and Windows, and control all the sizes that are generated. Just have a look at the available options below.
+
+You could also set a theme color and a mask icon. The mask icon will be used in the MacBook Pro Touch Bar, so it should be simple with transparent background.
 
 ## Options
 
@@ -124,6 +128,10 @@ When `extended` option is `true`, the following is added:
 <meta name="msapplication-TileColor" content="#0000ff">
 <meta name="msapplication-TileImage" content="/media/.../favicon-144x.png">
 ```
+
+## Research
+
+To decide on a solution that fits all or most cases, I looked at many existing favicon generators and read the Mozilla docs. You can have a look at my reasearch at the repo wiki: https://github.com/moritzebeling/kirby-favicon/wiki
 
 ## Development
 
