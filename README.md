@@ -10,13 +10,13 @@ composer require moritzebeling/kirby-favicon
 
 Or download/clone this repo into `site/plugins` of your Kirby project.
 
-## Minimal setup
+## 🙃 Minimal setup
 
 1. Inside `assets/favicon` add `favicon.png`
 
 The icon should be square, min `180x180px`, but why don’t you just do `1024x1024px` :)
 
-## Recommended setup
+## 😎 Recommended setup
 
 2. Also add a `favicon.svg`
 3. Inside your HTML `<head>` element, include the `favicon` snippet:
@@ -29,9 +29,11 @@ Usually, the `png` will be used as an app icon (eg. when you save the website as
 
 For further control you could also add specific app icons for Apple, Android and Windows, and control all the sizes that are generated. Just have a look at the available options below.
 
-You could also set a theme color and a mask icon. The mask icon will be used in the MacBook Pro Touch Bar, so it should be simple with transparent background.
+The mask icon will be used in the MacBook Pro Touch Bar, so it should be simple and with transparent background.
 
-## Options
+If your website has a changing background color, you should set `color` to false, otherwise I recommend to set it to you primary background color.
+
+## 🤓 Options
 
 ```php
 return [
@@ -47,7 +49,7 @@ return [
             'sizes' => [ 180, 167, 152 ]
         ],
         'mask' => 'assets/favicon/mask.svg', // fallback to favicon.svg
-        'color' => '#0000ff',
+        'color' => '#000000',
         
         // for minimal html output
         'minimalist' => false,
@@ -81,7 +83,7 @@ return [
 
 You can add other values according to the [specification](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json).
 
-## What will it do?
+## 🤨 What will it do?
 
 It will automatically serve the following routes:
 

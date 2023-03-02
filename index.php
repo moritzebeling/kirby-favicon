@@ -17,7 +17,7 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
             'sizes' => [ 180, 167, 152 ]
         ],
         'mask' => 'assets/favicon/mask.svg', // fallback to favicon.svg
-        'color' => '#0000ff',
+        'color' => '#000000',
         
         // for minimal html output
         'minimalist' => false,
