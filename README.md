@@ -1,11 +1,12 @@
-# Kirby Favicon
+# Kirby Favicon Plugin
 
 This plugin will solve all your favicon worries :)
 
 ## Installation
 
-```
+```bash
 composer require moritzebeling/kirby-favicon
+composer update moritzebeling/kirby-favicon
 ```
 
 Or download/clone this repo into `site/plugins` of your Kirby project.
@@ -33,7 +34,7 @@ The mask icon will be used in the MacBook Pro Touch Bar, so it should be simple 
 
 If your website has a changing background color, you should set `color` to false, otherwise I recommend to set it to you primary background color.
 
-## 🤓 Options
+## 🤓 Full configuration
 
 ```php
 return [
@@ -133,8 +134,24 @@ When `extended` option is `true`, the following is added:
 
 ## Research
 
-To decide on a solution that fits all or most cases, I looked at many existing favicon generators and read the Mozilla docs. You can have a look at my reasearch at the repo wiki: https://github.com/moritzebeling/kirby-favicon/wiki
+This solution is an intersection of what many existing Favion generators provide. You can have a look on my research in the repo wiki: https://github.com/moritzebeling/kirby-favicon/wiki
 
-## Development
+## 🚧 Development
 
-This plugin is work in progress and I don’t provide any warranty. Use at your own risk. If you have any ideas for further developments or stumble upon any problems, please open an issue or PR. Thank you!
+1. Install yourself a fresh Kirby StarterKit
+2. `cd site/plugins`
+3. `git clone` this repo
+
+Roadmap
+- [ ] Set favicon for Kirby panel
+- [ ] Make favicon changable from panel
+
+## ☕️ Support
+
+If you like this plugin, I would be glad if you would invite me for a coffee: [PayPal](https://www.paypal.com/paypalme/cryptomunich)
+
+If you have any ideas for further development or stumble upon any problems, please open an issue or PR. Thank you!
+
+## Warranty
+
+This plugin is work in progress and comes without any warranty. Use at your own risk.

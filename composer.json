@@ -1,33 +1,47 @@
 {
     "name": "moritzebeling/kirby-favicon",
     "description": "Kirby plugin to meet all favicon needs",
-    "homepage": "https://github.com/moritzebeling/kirby-favicon",
-    "license": "MIT",
+    "version": "1.0.2",
     "type": "kirby-plugin",
-    "require": {
-        "php": ">=7.4.0",
-        "getkirby/composer-installer": "^1.1"
-    },
+    "homepage": "https://github.com/moritzebeling/kirby-favicon",
+    "time": "2023-03-02",
+    "license": "MIT",
     "authors": [
         {
             "name": "Moritz Ebeling",
             "homepage": "https://moritzebeling.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/moritzebeling/kirby-favicon/issues",
+        "wiki": "https://github.com/moritzebeling/kirby-favicon/wiki",
+        "source": "https://github.com/moritzebeling/kirby-favicon",
+        "docs": "https://github.com/moritzebeling/kirby-favicon"
+    },
+    "funding": [
+        {
+            "type": "paypal",
+            "url": "https://www.paypal.com/paypalme/cryptomunich"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0",
+        "getkirby/composer-installer": "^1.1"
+    },
     "keywords": [
+        "php",
         "kirby",
         "plugin",
+        "kirby-plugin",
+        "kirby-cms",
         "favicon",
+        "icon",
+        "app-icon",
         "apple-touch-icon",
         "browserconfig.xml",
         "manifest.json",
         "meta",
         "seo",
-        "icon",
         "logo"
-    ],
-    "support": {
-        "issues": "https://github.com/moritzebeling/kirby-favicon/issues",
-        "source": "https://github.com/moritzebeling/kirby-favicon"
-    }
+    ]
 }
