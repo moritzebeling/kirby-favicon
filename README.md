@@ -26,10 +26,7 @@ The icon should be square, min `180x180px`, but why don’t you just do `1024x10
 <?php snippet('favicon') ?>
 ```
 
-Usually, the `png` will be used as an app icon (eg. when you save the website as an app icon to your home screen), so I would recommend to not use transparency and add a little more space around the symbol. The `svg` will then be used by modern browsers for showing it in the tab bar, so transparency is fine and you can use the entire space as it will be shown quite small.
-
-For further control you could also add specific app icons for Apple, Android and Windows, and control all the sizes that are generated. Just have a look at the available options below.
-
+If you want to use transparency in your favicon, you should additionally add an app icon.
 The mask icon will be used in the MacBook Pro Touch Bar, so it should be simple and with transparent background.
 
 If your website has a changing background color, you should set `color` to false, otherwise I recommend to set it to you primary background color.
