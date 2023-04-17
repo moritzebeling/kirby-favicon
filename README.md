@@ -129,6 +129,10 @@ When `extended` option is `true`, the following is added:
 <meta name="msapplication-TileImage" content="/media/.../favicon-144x.png">
 ```
 
+## Panel Favicon
+
+https://getkirby.com/docs/reference/system/options/panel#custom-panel-favicon
+
 ## Research
 
 This solution is an intersection of what many existing Favion generators provide. You can have a look on my research in the repo wiki: https://github.com/moritzebeling/kirby-favicon/wiki
@@ -140,7 +144,6 @@ This solution is an intersection of what many existing Favion generators provide
 3. `git clone` this repo
 
 Roadmap
-- [ ] Set favicon for Kirby panel
 - [ ] Make favicon changable from panel
 
 ## ☕️ Support
