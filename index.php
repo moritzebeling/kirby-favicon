@@ -56,13 +56,11 @@ Kirby::plugin('moritzebeling/kirby-favicon',[
             'action'  => function () {
 
                 $ico = asset( option('moritzebeling.kirby-favicon.favicon.ico') );
-
                 if( $ico->exists() ){
                     return new Response($ico->read(), 'image/x-icon');
                 }
 
                 $png = asset( option('moritzebeling.kirby-favicon.favicon.png') );
-
                 if( $png->exists() ){
                     $png = $png->resize( 32 );
                     return new Response($png->read(), 'image/png');

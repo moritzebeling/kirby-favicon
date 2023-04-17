@@ -1,4 +1,4 @@
-<?= '<?xml version="1.0" encoding="utf-8"?>'; ?>
+<?= '<?xml version="1.0" encoding="utf-8"?>' ?>
 <browserconfig>
     <msapplication>
         <tile>
@@ -6,10 +6,10 @@
                 $i = $icon->resize($size);
                 ?>
                 <square<?= $size ?>x<?= $size ?>logo src="<?= $i->url() ?>" />
-            <?php endforeach; ?>
+            <?php endforeach ?>
             <?php if( $color ): ?>
                 <TileColor><?= $color ?></TileColor>
-            <?php endif; ?>
+            <?php endif ?>
         </tile>
     </msapplication>
 </browserconfig>
