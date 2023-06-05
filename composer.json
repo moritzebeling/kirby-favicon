@@ -1,7 +1,7 @@
 {
     "name": "moritzebeling/kirby-favicon",
     "description": "Kirby plugin to meet all favicon needs",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "type": "kirby-plugin",
     "homepage": "https://github.com/moritzebeling/kirby-favicon",
     "time": "2023-03-02",
