@@ -9,7 +9,7 @@ $app = asset( option('moritzebeling.kirby-favicon.app.icon') );
 $mask = asset( option('moritzebeling.kirby-favicon.mask') );
 $color = option('moritzebeling.kirby-favicon.color');
 
-$tags = [];
+$tags = $tags ?? [];
 
 /* svg */
 
@@ -62,7 +62,7 @@ if( $color ){
 $mask = $mask->exists() ? $mask : $svg;
 if( $mask->exists() ){
     $url = $mask->mediaUrl();
-    $c = $color ?? '#000000';
+    $c = $color ?? '#ffffff';
     $tags[] = "<link rel='mask-icon' href='$url' color='$c'>";
 }
 

@@ -47,7 +47,7 @@ return [
             'sizes' => [ 180, 167, 152 ]
         ],
         'mask' => 'assets/favicon/mask.svg', // fallback to favicon.svg
-        'color' => '#000000',
+        'color' => '#ffffff',
         
         // for minimal html output
         'minimalist' => false,
@@ -57,7 +57,7 @@ return [
 
         'manifest' => [
             'icon' => 'assets/favicon/android-icon.png', // fallback to favicon.png
-            'background_color' => '#000000',
+            'background_color' => '#ffffff',
             'sizes' => [
                 36 => 0.75,
                 48 => 1.0,
