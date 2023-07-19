@@ -6,7 +6,6 @@ This plugin will solve all your favicon worries :)
 
 ```bash
 composer require moritzebeling/kirby-favicon
-composer update moritzebeling/kirby-favicon
 ```
 
 Or download/clone this repo into `site/plugins` of your Kirby project.
